@@ -1,0 +1,6 @@
+<div *ngIf="(posts$ | async) as p">
+  <ul>
+    <li (click)="navigatePost(post.slug)" *ngFor="let post of p">{{ post.slug }} - {{ post.title }}</li>
+  </ul>
+</div>
+
