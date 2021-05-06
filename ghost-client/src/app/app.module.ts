@@ -3,15 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
-import {StoreModule} from '@ngrx/store';
 import {AppRoutingModule} from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { SanitizehtmlPipe } from './sanitizehtml.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostDetailComponent,
-    HomeComponent
+    HomeComponent,
+    SanitizehtmlPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

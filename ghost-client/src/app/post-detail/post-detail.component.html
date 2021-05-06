@@ -1,6 +1,6 @@
 
 <button [routerLink]="['/home']">< Back to home</button>
 <div *ngIf="(post$ | async) as pp">
-  <h1>{{pp.title}}</h1>
-  <div [innerHTML]="pp.html"></div>
+  <h1>{{pp.title}} - {{ pp.authors }} - {{pp.feature_image}}</h1>
+  <div [innerHTML]="pp.html | sanitizeHtml"></div>
 </div>

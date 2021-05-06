@@ -15,6 +15,7 @@ export class PostsService {
   getPosts(): Observable<PostsOrPages> {
     return from(GHOST_API.posts
       .browse({
+        include: ['authors', 'tags', 'count.posts'],
         limit: 'all'
       })).pipe(map(p => p));
   }
