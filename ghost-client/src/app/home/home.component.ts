@@ -36,15 +36,6 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['post', postSlug]);
   }
 
-  switchTheme(): void {
-    const htmlClasses = document.querySelector('html').classList;
-    if (localStorage.theme === 'dark') {
-      htmlClasses.remove('dark');
-      localStorage.removeItem('theme');
-    } else {
-      htmlClasses.add('dark');
-      localStorage.theme = 'dark';
-    }
-  }
+
 
 }
