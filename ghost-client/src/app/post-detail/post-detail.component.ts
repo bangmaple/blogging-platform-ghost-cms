@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {PostOrPage} from '@tryghost/content-api';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -21,12 +21,16 @@ export class PostDetailComponent implements OnInit {
 
   constructor(private readonly router: Router,
               private readonly route: ActivatedRoute,
-              private readonly postsService: PostsService) { }
+              private readonly postsService: PostsService) {
+  }
 
   ngOnInit(): void {
     this.post$ = this.route.paramMap.pipe(flatMap(r => {
       return this.postsService.getPost(r.get('slug'));
     }));
+    this.post$.subscribe(p => {
+      console.log(p.feature_image);
+    });
   }
 
 }
