@@ -11,7 +11,12 @@ import {flatMap} from 'rxjs/internal/operators';
   styleUrls: ['./post-detail.component.css']
 })
 export class PostDetailComponent implements OnInit {
-
+  code = `&lt;header class="site-header outer"&gt;
+  &lt;div class="inner"&gt;
+    {{&gt; "site-nav"}}
+  &lt;/div&gt;
+&lt;/header&gt;
+					`;
   post$: Observable<PostOrPage>;
 
   constructor(private readonly router: Router,

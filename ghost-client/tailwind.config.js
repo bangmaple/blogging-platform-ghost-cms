@@ -10,12 +10,14 @@ module.exports = {
         './src/**/*.{html,ts,css,scss,sass,less,styl}',
       ]
     },
-    darkMode: 'media', // or 'media' or 'class'
+    darkMode: 'class', // or 'media' or 'class'
     theme: {
       extend: {},
     },
     variants: {
-      extend: {},
+      extend: {
+        textOpacity: ['dark']
+      },
     },
     plugins: [require('@tailwindcss/aspect-ratio'),require('@tailwindcss/forms'),require('@tailwindcss/line-clamp'),require('@tailwindcss/typography')],
 };
